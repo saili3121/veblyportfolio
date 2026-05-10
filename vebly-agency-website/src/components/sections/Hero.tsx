@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen bg-[#0b1120] flex items-center pt-32 pb-20 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
-        
+
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -61,13 +61,11 @@ export default function Hero() {
           {/* Subtle glow background */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-900/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-          <div 
+          <div
             className="absolute inset-0"
-            style={{
-              perspective: "1000px",
-            }}
+            style={{ perspective: "1000px" }}
           >
-            <div 
+            <div
               className="relative w-full h-full"
               style={{
                 transform: "rotateX(20deg) rotateY(-20deg) rotateZ(10deg)",
@@ -75,9 +73,7 @@ export default function Hero() {
               }}
             >
               <motion.div
-                animate={{
-                  y: ["0%", "-50%"]
-                }}
+                animate={{ y: ["0%", "-50%"] }}
                 transition={{
                   repeat: Infinity,
                   ease: "linear",
@@ -86,17 +82,15 @@ export default function Hero() {
                 className="absolute inset-x-0 top-0 flex flex-col gap-12"
               >
                 {[...mockups, ...mockups].map((src, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 bg-slate-800"
-                    style={{
-                      transform: "translateZ(0)", 
-                    }}
+                    style={{ transform: "translateZ(0)" }}
                   >
                     {/* Glass reflection effect */}
                     <div className="absolute inset-0 z-10 bg-gradient-to-tr from-white/5 to-transparent opacity-50 pointer-events-none"></div>
                     <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent z-10 pointer-events-none transform -skew-y-12 origin-top-left opacity-30"></div>
-                    
+
                     <Image
                       src={src}
                       alt="Website Mockup"
