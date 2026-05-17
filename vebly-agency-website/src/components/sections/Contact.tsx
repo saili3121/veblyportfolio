@@ -33,57 +33,76 @@ export default function Contact() {
                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                       <MessageCircle size={20} className="text-blue-400" />
                     </div>
-                    hello@vebly.com
+                    build.vebly@gmail.com
+                  </div>
+                  <div className="flex items-center gap-3 mt-4">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-blue-400"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    +91 8237896811
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 text-slate-900">
-                <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      placeholder="John Doe"
-                    />
+              <div className="bg-gradient-to-b from-white to-slate-50 rounded-[2rem] p-8 md:p-10 text-slate-900 shadow-2xl relative">
+                {/* Decorative dots */}
+                <div className="absolute top-6 right-6 flex gap-1 opacity-20">
+                  <div className="w-2 h-2 rounded-full bg-blue-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
+                  <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                </div>
+
+                <h3 className="text-3xl font-extrabold mb-2 text-slate-900">Get in Touch</h3>
+                <p className="text-slate-500 mb-8 text-sm">Fill out the form below and we'll get back to you shortly.</p>
+
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 ml-1">Full Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        className="w-full px-5 py-3.5 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-sm"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="business" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 ml-1">Company</label>
+                      <input
+                        type="text"
+                        id="business"
+                        className="w-full px-5 py-3.5 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-sm"
+                        placeholder="Acme Corp"
+                      />
+                    </div>
                   </div>
                   <div>
-                    <label htmlFor="business" className="block text-sm font-medium text-slate-700 mb-1">Business / Company</label>
-                    <input
-                      type="text"
-                      id="business"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      placeholder="Acme Corp"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Work Email</label>
+                    <label htmlFor="email" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 ml-1">Work Email</label>
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full px-5 py-3.5 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-sm"
                       placeholder="john@acme.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="details" className="block text-sm font-medium text-slate-700 mb-1">Project Details</label>
+                    <label htmlFor="details" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 ml-1">Project Details</label>
                     <textarea
                       id="details"
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                      className="w-full px-5 py-3.5 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-sm resize-none"
                       placeholder="Tell us about your project goals and timeline..."
                     ></textarea>
                   </div>
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                    className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-3 group"
                   >
                     Send Message
-                    <Send size={18} />
-                  </button>
+                    <Send size={20} className="group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
                 </form>
               </div>
             </div>

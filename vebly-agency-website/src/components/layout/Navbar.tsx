@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -18,10 +19,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
+    { name: "Portfolio", href: "#featured-work" },
     { name: "Testimonials", href: "#testimonials" },
   ];
 
@@ -36,12 +37,14 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="flex items-center gap-2 z-50">
-          <div className="relative flex items-center justify-center w-8 h-8 rounded bg-blue-600 text-white font-bold text-xl overflow-hidden">
-            <span className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-700 opacity-80"></span>
-            <span className="relative z-10 flex items-center justify-center w-full h-full">V</span>
+        <Link href="#home" className="flex items-center gap-2 z-50">
+          <div className="relative w-12 h-12 flex items-center justify-center">
+            <Image src="/logo.svg" alt="Vebly Logo" fill className="object-contain" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">Vebly</span>
+          <div className="flex flex-col">
+            <span className="text-xl font-bold tracking-tight text-slate-900 leading-tight">VEBLY</span>
+            <span className="text-[0.55rem] font-medium tracking-wider text-slate-500 uppercase leading-tight">Website Development Agency</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -61,7 +64,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="#contact"
-            className="px-6 py-2.5 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md"
+            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-extrabold tracking-wide hover:from-blue-700 hover:to-cyan-600 transition-all shadow-lg shadow-blue-500/30 border border-blue-400/50"
           >
             Contact Us
           </Link>

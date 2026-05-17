@@ -14,7 +14,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-[#0b1120] flex items-center pt-32 pb-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-[#0b1120] flex items-center pt-32 pb-20 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
 
         {/* Left Content */}
@@ -48,7 +48,7 @@ export default function Hero() {
               <ArrowRight size={16} />
             </Link>
             <Link
-              href="#portfolio"
+              href="#featured-work"
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900/50 border border-slate-700 text-slate-300 text-sm font-bold tracking-wider hover:bg-slate-800 transition-all flex items-center justify-center"
             >
               VIEW OUR WORK
